@@ -4,11 +4,11 @@ import type { Config } from "tailwindcss"
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -20,6 +20,33 @@ const config = {
     },
     extend: {
       colors: {
+        // color variables
+        // Generic color names (no mention of specific colors)
+        mainColor: {
+          DEFAULT: "#22C55E", // Light mode color
+          dark: "#166534", // Dark mode color
+        },
+        supportColor: {
+          DEFAULT: "#A8E6CF", // Light mode color
+          dark: "#14532D", // Dark mode color
+        },
+        bgColor: {
+          DEFAULT: "#F8FAFC", // Light background
+          dark: "#0F172A", // Dark background
+        },
+        txtColor: {
+          DEFAULT: "#1E293B", // Light text color
+          dark: "#F8FAFC", // Dark text color
+        },
+        highlightColor: {
+          DEFAULT: "#FB923C", // Light mode accent (e.g., buttons)
+          dark: "#EA580C", // Dark mode accent
+        },
+        statusColor: {
+          DEFAULT: "#A855F7", // Light mode for status tags
+          dark: "#9333EA", // Dark mode for status tags
+        },
+        //
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -76,6 +103,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
 export default config
