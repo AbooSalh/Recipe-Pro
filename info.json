@@ -1,0 +1,25 @@
+{
+    "name": "Recipe Pro",
+    "description": "A recipe app to manage and explore various recipes, featuring user-generated content and personalized recipe collections.",
+    "tech_stack": [
+        "Next.js",
+        "Strapi",
+        "Tailwind CSS",
+        "sqlite3"
+    ],
+    "big_project": true,
+    "role": "Full-Stack Developer",
+    "duration": "10/2/2024 - present",
+    "features": [
+        "User authentication and profiles",
+        "Recipe creation, editing, and deletion",
+        "Search and filter by ingredients or categories",
+        "Recipe rating and comments",
+        "Dark mode toggle",
+        "Recipe favorites and personalized collections",
+        "Responsive design"
+    ],
+    "demo_link": "https://recipe-pro.vercel.app",
+    "future_plans": "Add a shopping list feature, meal planning, and video recipe tutorials.",
+    "github_link": "https://github.com/username/recipe-pro"
+}
