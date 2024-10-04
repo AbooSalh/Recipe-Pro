@@ -12,8 +12,8 @@ export const MobileMenu = () => (
           aria-current={item.current ? "page" : undefined}
           className={classNames(
             item.current
-              ? "bg-gray-900 text-white"
-              : "text-gray-300 hover:bg-gray-700 hover:text-white",
+              ? "bg-mainColor text-white"
+              : "text-black hover:bg-mainColor  hover:text-white",
             "block rounded-md px-3 py-2 text-base font-medium"
           )}
         >
