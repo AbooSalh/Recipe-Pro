@@ -1,22 +1,13 @@
-import Link from "next/link";
+import { DisclosurePanel, DisclosureButton } from "@headlessui/react";
+import { classNames, navigation } from "../utils";
 
-const navigation = [
-  { name: "Dashboard", href: "/", current: true },
-  { name: "Team", href: "/team", current: false },
-  { name: "Projects", href: "/projects", current: false },
-  { name: "Calendar", href: "/calendar", current: false },
-];
-
-function classNames(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
-}
-
-export default function MobileMenu() {
-  return (
+export const MobileMenu = () => (
+  <DisclosurePanel className="sm:hidden">
     <div className="space-y-1 px-2 pb-3 pt-2">
       {navigation.map((item) => (
-        <Link
+        <DisclosureButton
           key={item.name}
+          as="a"
           href={item.href}
           aria-current={item.current ? "page" : undefined}
           className={classNames(
@@ -27,8 +18,8 @@ export default function MobileMenu() {
           )}
         >
           {item.name}
-        </Link>
+        </DisclosureButton>
       ))}
     </div>
-  );
-}
+  </DisclosurePanel>
+);
