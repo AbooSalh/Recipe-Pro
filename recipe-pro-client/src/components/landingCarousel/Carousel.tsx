@@ -60,11 +60,13 @@ export default function FoodCarousel({
                 <div className="absolute inset-0 bg-gradient-to-b from-black to-[rgba(0,0,0,0)] opacity-50" />
                 {/* Text overlay */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-                  <h2 className="text-5xl font-bold text-mainColor bg-black bg-opacity-30 w-full text-center ">
+                  <h2 className="relative py-3 text-5xl font-bold text-mainColor bg-black bg-opacity-30 w-full text-center ">
                     {image.title}
+                    <p className="text-lg mt-2 text-white">
+                      {image.description}
+                    </p>
                   </h2>
-                  <p className="text-lg mt-2">{image.description}</p>
-                  <button className="mt-4 px-4 py-2 bg-black bg-opacity-80 text-white rounded hover:bg-opacity-100 transition-[background-color]">
+                  <button className="mt-4 px-4 py-2 bg-black bg-opacity-50 text-white rounded hover:rounded-2xl hover:bg-opacity-100 transition-all">
                     Read the recipe
                   </button>
                 </div>
@@ -74,13 +76,13 @@ export default function FoodCarousel({
         </div>
       </div>
       <button
-        className="absolute left-4 top-1/2 -translate-y-1/2 transform rounded-full bg-white p-2 text-black"
+        className="absolute left-4 top-[51%] -translate-y-1/2 transform rounded-full bg-white opacity-80 p-2  text-black"
         onClick={scrollPrev}
       >
         <ChevronLeft size={24} />
       </button>
       <button
-        className="absolute right-4 top-1/2 -translate-y-1/2 transform rounded-full bg-white p-2 text-black"
+        className="absolute right-4 top-[51%] -translate-y-1/2 transform rounded-full bg-white opacity-80 p-2 text-black"
         onClick={scrollNext}
       >
         <ChevronRight size={24} />
