@@ -3,8 +3,23 @@ import React, { useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 
-export default function FoodCarousel({ className }: { className?: string }) {
+// Define an interface for the image data
+interface ImageData {
+  src: string;
+  alt: string;
+  title: string; // Add title property
+  description: string; // Add description property
+}
+
+export default function FoodCarousel({
+  className,
+  images, // Accept images as a prop
+}: {
+  className?: string;
+  images: ImageData[];
+}) {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
   useEffect(() => {
@@ -28,15 +43,34 @@ export default function FoodCarousel({ className }: { className?: string }) {
         ref={emblaRef}
       >
         <div className="embla__container h-full">
-          <div className="embla__slide flex items-center justify-center">
-            Slide 1
-          </div>
-          <div className="embla__slide flex items-center justify-center">
-            Slide 2
-          </div>
-          <div className="embla__slide flex items-center justify-center">
-            Slide 3
-          </div>
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className="embla__slide flex items-center justify-center"
+            >
+              <div className="relative w-full h-[calc(100vh-64px)]">
+                {/* Render each image dynamically */}
+                <Image
+                  src={image.src}
+                  layout="fill" // Makes the image fill the container
+                  objectFit="cover" // Prevents overflow and keeps the image within the container
+                  alt={image.alt}
+                />
+                {/* Overlay with gradient */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black to-[rgba(0,0,0,0)] opacity-50" />
+                {/* Text overlay */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
+                  <h2 className="text-5xl font-bold text-mainColor bg-black bg-opacity-30 w-full text-center ">
+                    {image.title}
+                  </h2>
+                  <p className="text-lg mt-2">{image.description}</p>
+                  <button className="mt-4 px-4 py-2 bg-black bg-opacity-80 text-white rounded hover:bg-opacity-100 transition-[background-color]">
+                    Read the recipe
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
       <button
