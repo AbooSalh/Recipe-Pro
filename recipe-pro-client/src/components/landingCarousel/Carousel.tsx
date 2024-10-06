@@ -1,15 +1,15 @@
 "use client";
-
 import React, { useCallback, useEffect } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-export default function EmblaCarousel() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [Autoplay()]);
+export default function FoodCarousel({ className }: { className?: string }) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [Autoplay()]);
 
   useEffect(() => {
     if (emblaApi) {
-      console.log(emblaApi.slideNodes()); // Access API
+      console.log(emblaApi.slideNodes());
     }
   }, [emblaApi]);
 
@@ -22,8 +22,11 @@ export default function EmblaCarousel() {
   }, [emblaApi]);
 
   return (
-    <div className="embla mx-auto mt-12 max-w-lg">
-      <div className="embla__viewport h-56 border" ref={emblaRef}>
+    <div className={"embla mx-auto " + className}>
+      <div
+        className="embla__viewport min-h-[calc(100vh-64px)] w-screen border"
+        ref={emblaRef}
+      >
         <div className="embla__container h-full">
           <div className="embla__slide flex items-center justify-center">
             Slide 1
@@ -36,21 +39,18 @@ export default function EmblaCarousel() {
           </div>
         </div>
       </div>
-
-      <div className="mt-3 flex justify-between">
-        <button
-          className="w-20 bg-black px-2 py-1 text-sm text-white"
-          onClick={scrollPrev}
-        >
-          Prev
-        </button>
-        <button
-          className="w-20 bg-black px-2 py-1 text-sm text-white"
-          onClick={scrollNext}
-        >
-          Next
-        </button>
-      </div>
+      <button
+        className="absolute left-4 top-1/2 -translate-y-1/2 transform rounded-full bg-white p-2 text-black"
+        onClick={scrollPrev}
+      >
+        <ChevronLeft size={24} />
+      </button>
+      <button
+        className="absolute right-4 top-1/2 -translate-y-1/2 transform rounded-full bg-white p-2 text-black"
+        onClick={scrollNext}
+      >
+        <ChevronRight size={24} />
+      </button>
     </div>
   );
 }
