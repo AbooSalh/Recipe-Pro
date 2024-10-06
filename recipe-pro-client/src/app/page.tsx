@@ -1,7 +1,9 @@
 
 function page() {
   return (
-    <div className='p-6'>Hello World</div>
+    <main>
+      
+    </main>
   );
 }
 

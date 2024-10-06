@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <Navbar />
+        <Navbar className="bg-opacity-80"/>
         {children}
       </body>
     </html>
