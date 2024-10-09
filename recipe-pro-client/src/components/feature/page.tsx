@@ -22,7 +22,7 @@ function Features() {
           {featureCards.map((card, index) => (
             <div
               key={index}
-              className="group relative w-full max-w-sm bg-gray-100 rounded-2xl p-6 transition-all duration-500 md:w-1/2 lg:w-1/4 hover:bg-mainColor"
+              className="group relative w-full max-w-sm min-h-60 bg-gray-100 rounded-2xl p-6 transition-all duration-500 md:w-1/2 lg:w-1/4 hover:bg-mainColor flex-grow"
             >
               <div className="bg-white rounded-full flex justify-center items-center mb-5 w-14 h-14 mx-auto">
                 <card.icon className="w-8 h-8 text-mainColor group-hover:text-supportColor-dark" />
