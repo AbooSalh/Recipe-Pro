@@ -15,11 +15,12 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
+  features: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
-        <Navbar className="bg-opacity-80"/>
+        <Navbar className="bg-opacity-80" />
         {children}
       </body>
     </html>
