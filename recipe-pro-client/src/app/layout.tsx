@@ -1,5 +1,6 @@
 import { inter } from "@/app/ui/fonts";
 import "@/app/ui/global.css";
+import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/page";
 import { Metadata } from "next";
 
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <Navbar className="bg-opacity-80" />
         {children}
+        <Footer />
       </body>
     </html>
   );
