@@ -1,5 +1,5 @@
-import Features from "@/components/feature/page";
-import FoodCarousel from "@/components/landingCarousel/Carousel";
+import Features from "@/components/Features/Features";
+import FoodCarousel from "@/components/HeroSection/HeroSection";
 import { landingImages } from "@/utils/placeholders";
 function page() {
   return (

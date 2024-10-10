@@ -33,7 +33,6 @@ const Footer = () => {
     { name: "Home", url: "#" },
     { name: "Explore Recipes", url: "#" },
     { name: "Personalized Meal Plans", url: "#" },
-    { name: "Free & Premium Recipes", url: "#" },
     { name: "Help & Support", url: "#" },
     // Add or remove quick links as needed
   ];

@@ -27,7 +27,7 @@ function Features() {
               <div className="bg-white rounded-full flex justify-center items-center mb-5 w-14 h-14 mx-auto">
                 <card.icon className="w-8 h-8 text-mainColor group-hover:text-supportColor-dark" />
               </div>
-              <h4 className="text-xl font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">
+              <h4 className="text-xl text-center font-semibold text-gray-900 mb-3 capitalize transition-all duration-500 group-hover:text-white">
                 {card.title}
               </h4>
               <p className="text-sm font-normal text-gray-500 transition-all duration-500 leading-5 group-hover:text-white">
