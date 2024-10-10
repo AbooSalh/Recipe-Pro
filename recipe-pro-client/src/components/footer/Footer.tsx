@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Description */}
           <div className="flex flex-col space-y-3">
-            <h2 className="text-3xl font-bold">CookPal</h2>
+            <h2 className="text-3xl font-bold">Recipe Pro</h2>
             <p className="text-gray-400">
               Your go-to platform for discovering delicious recipes, sharing
               culinary masterpieces, and receiving personalized meal plans.

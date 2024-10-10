@@ -56,4 +56,8 @@ export const featureCards = [
   },
 ];
 
-
+export const website = {
+  name: "Recipe Pro",
+  description:
+    "Your go-to platform for discovering delicious recipes, sharing culinary masterpieces, and receiving personalized meal plans.",
+};
