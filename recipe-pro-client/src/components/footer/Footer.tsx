@@ -1,36 +1,66 @@
 import React from "react";
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react"; // Lucide icons for social media
+import {
+  Facebook,
+  Instagram,
+  Twitter,
+  Youtube,
+  Github,
+  Linkedin,
+} from "lucide-react";
+import { website } from "@/utils/placeholders";
+
+const socialIcons = {
+  Facebook,
+  Instagram,
+  Twitter,
+  Youtube,
+  Github,
+  Linkedin,
+};
+
+type SocialIconName = keyof typeof socialIcons;
 
 const Footer = () => {
+  const socialMediaLinks: { name: SocialIconName; url: string }[] = [
+    { name: "Facebook", url: "#" },
+    { name: "Instagram", url: "#" },
+    { name: "Twitter", url: "#" },
+    { name: "Youtube", url: "#" },
+    // Add or remove social media links as needed
+  ];
+
+  const quickLinks = [
+    { name: "Home", url: "#" },
+    { name: "Explore Recipes", url: "#" },
+    { name: "Personalized Meal Plans", url: "#" },
+    { name: "Free & Premium Recipes", url: "#" },
+    { name: "Help & Support", url: "#" },
+    // Add or remove quick links as needed
+  ];
+
   return (
     <footer className="bg-gray-900 text-white py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Logo and Description */}
           <div className="flex flex-col space-y-3">
-            <h2 className="text-3xl font-bold">Recipe Pro</h2>
-            <p className="text-gray-400">
-              Your go-to platform for discovering delicious recipes, sharing
-              culinary masterpieces, and receiving personalized meal plans.
-            </p>
+            <h2 className="text-3xl font-bold">{website.name}</h2>
+            <p className="text-gray-400">{website.description}</p>
             <div className="flex space-x-4 mt-4">
               {/* Social Media Icons */}
-              <a href="#" aria-label="Facebook" className="hover:text-gray-300">
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="hover:text-gray-300"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
-              <a href="#" aria-label="Twitter" className="hover:text-gray-300">
-                <Twitter className="w-6 h-6" />
-              </a>
-              <a href="#" aria-label="YouTube" className="hover:text-gray-300">
-                <Youtube className="w-6 h-6" />
-              </a>
+              {socialMediaLinks.map((link) => {
+                const Icon = socialIcons[link.name];
+                return (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    aria-label={link.name}
+                    className="hover:text-gray-300"
+                  >
+                    <Icon className="w-6 h-6" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -38,31 +68,16 @@ const Footer = () => {
           <div className="flex flex-col space-y-3">
             <h3 className="text-xl font-semibold">Quick Links</h3>
             <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-gray-400 hover:text-gray-300">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-gray-300">
-                  Explore Recipes
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-gray-300">
-                  Personalized Meal Plans
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-gray-300">
-                  Free & Premium Recipes
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-400 hover:text-gray-300">
-                  Help & Support
-                </a>
-              </li>
+              {quickLinks.map((link) => (
+                <li key={link.name}>
+                  <a
+                    href={link.url}
+                    className="text-gray-400 hover:text-gray-300"
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -91,7 +106,9 @@ const Footer = () => {
 
         {/* Footer Bottom */}
         <div className="mt-8 border-t border-gray-700 pt-4 text-center text-gray-500">
-          <p>© {new Date().getFullYear()} CookPal. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} {website.name}. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

@@ -60,4 +60,15 @@ export const website = {
   name: "Recipe Pro",
   description:
     "Your go-to platform for discovering delicious recipes, sharing culinary masterpieces, and receiving personalized meal plans.",
+  logo: "/assets/images/logos/logo-black-noBG.png",
+  socialMedia: {
+    facebook: "https://www.facebook.com/",
+    instagram: "https://www.instagram.com/",
+    twitter: "https://twitter.com/",
+    youtube: "https://www.youtube.com/",
+  },
+  contact: {
+    email: "zK9VH@example.com",
+    phone: "123-456-7890",
+  },
 };
