@@ -39,7 +39,7 @@ export default function FoodCarousel({
   return (
     <div className={"embla mx-auto " + className}>
       <div
-        className="embla__viewport min-h-[calc(100vh-64px)] w-screen border"
+        className="embla__viewport min-h-[calc(100vh+64px)] w-screen border"
         ref={emblaRef}
       >
         <div className="embla__container h-full">
@@ -48,7 +48,7 @@ export default function FoodCarousel({
               key={index}
               className="embla__slide flex items-center justify-center"
             >
-              <div className="relative w-full h-[calc(100vh-64px)]">
+              <div className="relative w-full h-[calc(100vh)] mt-[64px]">
                 {/* Render each image dynamically */}
                 <Image
                   src={image.src}
@@ -76,13 +76,13 @@ export default function FoodCarousel({
         </div>
       </div>
       <button
-        className="absolute left-4 top-[51%] -translate-y-1/2 transform rounded-full bg-white opacity-80 p-2  text-black"
+        className="absolute left-4 top-[54%] -translate-y-1/2 transform rounded-full bg-white opacity-80 p-2  text-black"
         onClick={scrollPrev}
       >
         <ChevronLeft size={24} />
       </button>
       <button
-        className="absolute right-4 top-[51%] -translate-y-1/2 transform rounded-full bg-white opacity-80 p-2 text-black"
+        className="absolute right-4 top-[54%] -translate-y-1/2 transform rounded-full bg-white opacity-80 p-2 text-black"
         onClick={scrollNext}
       >
         <ChevronRight size={24} />
