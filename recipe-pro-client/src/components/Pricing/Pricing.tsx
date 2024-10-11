@@ -36,7 +36,11 @@ const Pricing = () => {
           </div>
 
           {/* Premium Plan */}
-          <div className="bg-white border border-gray-200 p-8 rounded-xl shadow-md flex flex-col items-center">
+          <div className="relative bg-gray-100 p-8 rounded-xl shadow-md flex flex-col items-center border-yellow-400 border-2">
+            {/* Best Value Badge */}
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-white px-4 py-1 rounded-full text-sm font-semibold">
+              Best Value
+            </div>
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">
               Premium Plan
             </h3>

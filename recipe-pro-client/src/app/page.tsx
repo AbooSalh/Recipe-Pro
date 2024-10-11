@@ -7,6 +7,7 @@ function page() {
     <main className="min-h-[calc(100vh-64px)]">
       <FoodCarousel images={landingImages} />
       <Features/>
+      <hr />
       <Pricing/>
     </main>
   );
