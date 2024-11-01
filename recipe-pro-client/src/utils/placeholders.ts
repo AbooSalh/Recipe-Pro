@@ -72,3 +72,62 @@ export const website = {
     phone: "123-456-7890",
   },
 };
+
+
+export const recipes = [
+  {
+    id: 1,
+    name: "Spaghetti Carbonara",
+    description: "Classic Italian pasta dish with eggs, cheese, and pancetta",
+    tags: ["Pasta", "Italian", "Quick", "Egg", "Cheese"],
+    difficulty: "Easy",
+    time: "30 min",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+  {
+    id: 2,
+    name: "Chicken Tikka Masala",
+    description: "Creamy and spicy Indian curry with tender chicken pieces",
+    tags: ["Curry", "Indian", "Spicy", "Chicken", "Creamy"],
+    difficulty: "Medium",
+    time: "45 min",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+  {
+    id: 3,
+    name: "Vegetable Stir Fry",
+    description: "Quick and healthy mix of fresh vegetables in a savory sauce",
+    tags: ["Vegetarian", "Asian", "Quick", "Healthy", "Vegetables"],
+    difficulty: "Easy",
+    time: "20 min",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+  {
+    id: 4,
+    name: "Beef Bourguignon",
+    description: "Rich French stew with beef, red wine, and vegetables",
+    tags: ["Stew", "French", "Beef", "Wine", "Slow-cooked"],
+    difficulty: "Hard",
+    time: "3 hours",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+  {
+    id: 5,
+    name: "Caesar Salad",
+    description:
+      "Classic salad with romaine lettuce, croutons, and Caesar dressing",
+    tags: ["Salad", "Quick", "Vegetarian", "Lettuce", "Cheese"],
+    difficulty: "Easy",
+    time: "15 min",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+  {
+    id: 6,
+    name: "Chocolate Lava Cake",
+    description: "Decadent dessert with a gooey chocolate center",
+    tags: ["Dessert", "Chocolate", "Baking", "Sweet", "Indulgent"],
+    difficulty: "Medium",
+    time: "25 min",
+    image: "/placeholder.svg?height=200&width=300",
+  },
+];
