@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { Search, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { recipes } from "@/utils/placeholders";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function RecipeProductsPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -124,13 +124,13 @@ export default function RecipeProductsPage() {
               key={recipe.id}
               className="bg-white rounded-lg shadow-md overflow-hidden border border-[#CBD5E1]"
             >
-                <Image
-                  src={recipe.image}
-                  alt={recipe.name}
-                  width={400}
-                  height={100}
-                  className="w-full h-48 object-cover"
-                />
+              <Image
+                src={recipe.image}
+                alt={recipe.name}
+                width={400}
+                height={100}
+                className="w-full h-48 object-cover"
+              />
 
               <div className="p-4">
                 <h2 className="text-xl font-semibold mb-2 text-[#334155]">
@@ -155,9 +155,12 @@ export default function RecipeProductsPage() {
                     {recipe.time}
                   </span>
                 </div>
-                <Button className="w-full bg-[#4CAF50] text-white hover:bg-[#81C784] rounded-lg">
+                <Link
+                  href={`/recipes/${recipe.id}`}
+                  className="w-full text-center p-2 block bg-[#4CAF50] text-white hover:bg-[#81C784] hover:rounded-xl transition-all"
+                >
                   View Recipe
-                </Button>
+                </Link>
               </div>
             </div>
           ))}
