@@ -9,20 +9,22 @@ import { recipes } from "@/utils/placeholders";
 
 export default function RecipeProductsPage() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [tagSearchTerm, setTagSearchTerm] = useState("");
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [filteredRecipes, setFilteredRecipes] = useState(recipes);
 
   const allTags = Array.from(new Set(recipes.flatMap((recipe) => recipe.tags)));
+
+  const filteredTags = allTags.filter((tag) =>
+    tag.toLowerCase().includes(tagSearchTerm.toLowerCase())
+  );
 
   useEffect(() => {
     const lowercasedSearchTerm = searchTerm.toLowerCase();
     const filtered = recipes.filter(
       (recipe) =>
         (recipe.name.toLowerCase().includes(lowercasedSearchTerm) ||
-          recipe.description.toLowerCase().includes(lowercasedSearchTerm) ||
-          recipe.tags.some((tag) =>
-            tag.toLowerCase().includes(lowercasedSearchTerm)
-          )) &&
+          recipe.description.toLowerCase().includes(lowercasedSearchTerm)) &&
         (selectedTags.length === 0 ||
           selectedTags.every((tag) => recipe.tags.includes(tag)))
     );
@@ -35,12 +37,17 @@ export default function RecipeProductsPage() {
     );
   };
 
+  const removeTag = (tagToRemove: string) => {
+    setSelectedTags((prev) => prev.filter((tag) => tag !== tagToRemove));
+  };
+
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-[#475569]">
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-8">Recipe Collection</h1>
 
         <div className="mb-8">
+          {/* Recipe Search */}
           <div className="relative mb-4">
             <Input
               type="text"
@@ -52,33 +59,64 @@ export default function RecipeProductsPage() {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" />
           </div>
 
-          <div className="flex flex-wrap gap-2">
-            {allTags.map((tag) => (
-              <Badge
-                key={tag}
-                variant={selectedTags.includes(tag) ? "default" : "outline"}
-                className={`cursor-pointer rounded-lg ${
-                  selectedTags.includes(tag)
-                    ? "bg-slate-300 " // Selected tag: no hover effect
-                    : "text-[#475569] border border-[#CBD5E1] hover:bg-[#CBD5E1]  hover:text-[#334155]" // Unselected tag: hover effect
-                }`}
-                onClick={() => toggleTag(tag)}
-              >
-                {tag}
-                {selectedTags.includes(tag) && (
-                  <X
-                    className="w-3 h-3 ml-1"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleTag(tag);
-                    }}
-                  />
-                )}
-              </Badge>
-            ))}
+          {/* Tag Management Section */}
+          <div className="bg-white p-4 rounded-lg border border-[#CBD5E1] mb-4">
+            <h3 className="font-semibold mb-2">Filter by Tags</h3>
+
+            {/* Tag Search */}
+            <div className="relative mb-3">
+              <Input
+                type="text"
+                placeholder="Search tags..."
+                value={tagSearchTerm}
+                onChange={(e) => setTagSearchTerm(e.target.value)}
+                className="pl-10 bg-white border border-[#CBD5E1] rounded-lg"
+              />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400" />
+            </div>
+
+            {/* Selected Tags Section */}
+            {selectedTags.length > 0 && (
+              <div className="mb-3">
+                <p className="text-sm text-slate-500 mb-2">Applied Filters:</p>
+                <div className="flex flex-wrap gap-2">
+                  {selectedTags.map((tag) => (
+                    <Badge
+                      key={tag}
+                      className="bg-slate-300 rounded-lg flex items-center"
+                    >
+                      {tag}
+                      <X
+                        className="w-3 h-3 ml-1 cursor-pointer"
+                        onClick={() => removeTag(tag)}
+                      />
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Available Tags */}
+            <div className="max-h-32 overflow-y-auto">
+              <div className="flex flex-wrap gap-2">
+                {filteredTags
+                  .filter((tag) => !selectedTags.includes(tag))
+                  .map((tag) => (
+                    <Badge
+                      key={tag}
+                      variant="outline"
+                      className="cursor-pointer text-[#475569] border border-[#CBD5E1] hover:bg-[#CBD5E1] hover:text-[#334155] rounded-lg"
+                      onClick={() => toggleTag(tag)}
+                    >
+                      {tag}
+                    </Badge>
+                  ))}
+              </div>
+            </div>
           </div>
         </div>
 
+        {/* Recipe Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredRecipes.map((recipe) => (
             <div

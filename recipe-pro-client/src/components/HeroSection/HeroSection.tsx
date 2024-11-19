@@ -39,7 +39,7 @@ export default function FoodCarousel({
   return (
     <div className={"embla mx-auto " + className}>
       <div
-        className="embla__viewport min-h-[calc(100vh+64px)] w-screen border"
+        className="embla__viewport h-[calc(100vh-64px)] w-screen border"
         ref={emblaRef}
       >
         <div className="embla__container h-full">
