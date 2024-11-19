@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { recipes } from "@/utils/placeholders";
+import Image from "next/image";
 
 export default function RecipeProductsPage() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -123,11 +124,14 @@ export default function RecipeProductsPage() {
               key={recipe.id}
               className="bg-white rounded-lg shadow-md overflow-hidden border border-[#CBD5E1]"
             >
-              <img
-                src={recipe.image}
-                alt={recipe.name}
-                className="w-full h-48 object-cover"
-              />
+                <Image
+                  src={recipe.image}
+                  alt={recipe.name}
+                  width={400}
+                  height={100}
+                  className="w-full h-48 object-cover"
+                />
+
               <div className="p-4">
                 <h2 className="text-xl font-semibold mb-2 text-[#334155]">
                   {recipe.name}

@@ -82,7 +82,7 @@ export const recipes = [
     tags: ["Pasta", "Italian", "Quick", "Egg", "Cheese"],
     difficulty: "Easy",
     time: "30 min",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/assets/images/landing/img-2.jpg",
   },
   {
     id: 2,
@@ -91,7 +91,7 @@ export const recipes = [
     tags: ["Curry", "Indian", "Spicy", "Chicken", "Creamy"],
     difficulty: "Medium",
     time: "45 min",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/assets/images/landing/img-2.jpg",
   },
   {
     id: 3,
@@ -100,7 +100,7 @@ export const recipes = [
     tags: ["Vegetarian", "Asian", "Quick", "Healthy", "Vegetables"],
     difficulty: "Easy",
     time: "20 min",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/assets/images/landing/img-2.jpg",
   },
   {
     id: 4,
@@ -109,7 +109,7 @@ export const recipes = [
     tags: ["Stew", "French", "Beef", "Wine", "Slow-cooked"],
     difficulty: "Hard",
     time: "3 hours",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/assets/images/landing/img-2.jpg",
   },
   {
     id: 5,
@@ -119,7 +119,7 @@ export const recipes = [
     tags: ["Salad", "Quick", "Vegetarian", "Lettuce", "Cheese"],
     difficulty: "Easy",
     time: "15 min",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/assets/images/landing/img-2.jpg",
   },
   {
     id: 6,
@@ -128,6 +128,6 @@ export const recipes = [
     tags: ["Dessert", "Chocolate", "Baking", "Sweet", "Indulgent"],
     difficulty: "Medium",
     time: "25 min",
-    image: "/placeholder.svg?height=200&width=300",
+    image: "/assets/images/landing/img-2.jpg",
   },
 ];
