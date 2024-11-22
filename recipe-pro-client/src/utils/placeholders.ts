@@ -83,6 +83,7 @@ export const recipes = [
     difficulty: "Easy",
     time: "30 min",
     image: "/assets/images/landing/img-2.jpg",
+    price: { base: 12.99 },
   },
   {
     id: 2,

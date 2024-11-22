@@ -2,10 +2,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Clock, ChefHat, Users, Gauge } from "lucide-react";
-import { recipe } from "./utils";
+import { recipes } from "./utils";
 
 export default function RecipePage() {
   // Example recipe data - this would normally come from props or an API
+  const recipe = recipes[0];
 
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-[#475569]">
